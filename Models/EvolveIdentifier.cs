@@ -4,11 +4,10 @@ namespace APIPlugin
 {
 	public class EvolveIdentifier
 	{
-		private string name;
-		private int turnsToEvolve;
+    private string name;
+    private int turnsToEvolve;
 		private CardModificationInfo mods;
 		private EvolveParams evolution;
-
 		public EvolveParams Evolution
 		{
 			get
@@ -27,7 +26,6 @@ namespace APIPlugin
 						}
 					}
 				}
-
 				return this.evolution;
 			}
 		}
@@ -36,23 +34,23 @@ namespace APIPlugin
 		{
 			this.name = name;
 			this.turnsToEvolve = turnsToEvolve;
-			this.mods = mods;
+      this.mods = mods;
 		}
 
 		private void SetParams(CardInfo card)
 		{
-			EvolveParams _evolution = new EvolveParams();
+			EvolveParams evolution = new EvolveParams();
 
-			_evolution.turnsToEvolve = this.turnsToEvolve;
+			evolution.turnsToEvolve = this.turnsToEvolve;
 
-			_evolution.evolution = card;
+			evolution.evolution = card;
 
 			if (this.mods != null)
 			{
-				_evolution.evolution.mods.Add(this.mods);
+				evolution.evolution.mods.Add(this.mods);
 			}
 
-			this.evolution = _evolution;
+			this.evolution = evolution;
 		}
 
 		public override string ToString()
